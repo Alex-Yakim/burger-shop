@@ -1,0 +1,8 @@
+.idea/
+env/
+__pycache__/
+db.sqlite3
+структура.txt
+media/
+*.pyc
+.DS_Store
