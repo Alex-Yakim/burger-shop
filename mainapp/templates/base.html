@@ -28,10 +28,14 @@
 </head>
 
 <body>
-    {% include 'include/header.html' %}
+{% include 'include/header.html' %}
 
 {% block content %}
 {% endblock content %}
+
+{% include 'include/testimonial.html' %}
+{% include 'include/instragram.html' %}
+{% include 'include/footer.html' %}
  <!-- JS here -->
     <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
     <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
