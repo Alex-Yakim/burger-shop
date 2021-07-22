@@ -1,46 +1,21 @@
 <div class="instragram_area">
+    <div class="section_title mb-60 text-center">
+        <span>Our Instagram</span>
+    </div>
 <div class="container">
     <div class="row">
+        {% for photo in inst_photo %}
         <div class="col-lg-3 col-md-6">
             <div class="single_instagram">
-                <img src="img/instragram/1.png" alt="">
+                <img src="{{ photo.photo.url }}" alt="">
                 <div class="ovrelay">
-                    <a href="#">
+                    <a href="{{ photo.url }}">
                         <i class="fa fa-instagram"></i>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="single_instagram">
-                <img src="img/instragram/2.png" alt="">
-                <div class="ovrelay">
-                    <a href="#">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="single_instagram">
-                <img src="img/instragram/3.png" alt="">
-                <div class="ovrelay">
-                    <a href="#">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="single_instagram">
-                <img src="img/instragram/4.png" alt="">
-                <div class="ovrelay">
-                    <a href="#">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 </div>
