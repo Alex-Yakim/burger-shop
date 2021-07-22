@@ -19,7 +19,7 @@ class Menu(models.Model):
 class ComboMenu(models.Model):
     name = models.CharField('Название', max_length=255)
     description = models.TextField('Описание', blank=True)
-    photo = models.ImageField('Фото', upload_to='menu/') #TODO изменить каталог и перезалть товары
+    photo = models.ImageField('Фото', upload_to='menu/combo_menu')
     price = models.PositiveSmallIntegerField('Цена', blank=True)
 
     def __str__(self):
