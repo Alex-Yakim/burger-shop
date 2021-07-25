@@ -53,3 +53,20 @@ class InstragramPhoto(models.Model):
     class Meta:
         verbose_name = 'Фото из Instagram'
         verbose_name_plural = 'Фото из Instagram'
+
+
+class PhotoGallery(models.Model):
+    IMG_SIZES = (
+        ('small_img', 'Small'),
+        ('big_img', 'Big'),
+    )
+    photo = models.ImageField('Фото', upload_to='gallery')
+    css_style = models.CharField('Стиль CSS', max_length=255, choices=IMG_SIZES, default='Small')
+
+
+    def __str__(self):
+        return self.photo.name
+
+    class Meta:
+        verbose_name = 'Фото галлереи'
+        verbose_name_plural = 'Фото галлереи'

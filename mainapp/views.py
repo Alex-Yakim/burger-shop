@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, View
 
-from .models import Menu, ComboMenu, InstragramPhoto, Testimonials
+from .models import Menu, ComboMenu, InstragramPhoto, Testimonials, PhotoGallery
 
 
 # Create your views here.
@@ -31,3 +31,15 @@ def menu_list(request):
         'testimonials': testim,
     }
     return render(request, 'menu/menu.html', context=context)
+
+
+class AboutView(View):
+    def get(self, request):
+        template = 'about/about.html'
+        gallery = PhotoGallery.objects.all()
+        context = {
+            'photos': gallery,
+            'inst_photo': instragram(),
+            'testimonials': testimonials(),
+        }
+        return render(request, template, context=context)
