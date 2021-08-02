@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, View
 
-from .models import Menu, ComboMenu, InstragramPhoto, Testimonials, PhotoGallery
+from .models import Menu, ComboMenu, InstragramPhoto, Testimonials, PhotoGallery, VideoOnIndex
 
 
 # Create your views here.
@@ -41,5 +41,18 @@ class AboutView(View):
             'photos': gallery,
             'inst_photo': instragram(),
             'testimonials': testimonials(),
+        }
+        return render(request, template, context=context)
+
+
+class IndexView(View):
+    def get(self, request):
+        template = 'index.html'
+        context = {
+            'menu': Menu.objects.all()[:4],
+            'combo_menu': ComboMenu.objects.all()[:2],
+            'inst_photo': instragram(),
+            'testimonials': testimonials(),
+            'video': VideoOnIndex.objects.all()[0],
         }
         return render(request, template, context=context)

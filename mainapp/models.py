@@ -70,3 +70,16 @@ class PhotoGallery(models.Model):
     class Meta:
         verbose_name = 'Фото галлереи'
         verbose_name_plural = 'Фото галлереи'
+
+
+class VideoOnIndex(models.Model):
+    video = models.URLField('Ссылка на видео', max_length=200)
+    title = models.CharField('Заголовок', max_length=150, blank=True)
+    description = models.CharField('Описание', max_length=200, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Видео на главной'
+        verbose_name_plural = 'Видео на главной'

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Menu, ComboMenu, Testimonials, InstragramPhoto, PhotoGallery
+from .models import Menu, ComboMenu, Testimonials, InstragramPhoto, PhotoGallery, VideoOnIndex
 
 
 # Register your models here.
@@ -95,3 +95,7 @@ class GalleryAdmin(admin.ModelAdmin):
         return mark_safe(f'<img src={obj.photo.url} width="60" height="60">')
 
     get_photo_list.short_description = 'Фото'
+
+
+admin.site.register(VideoOnIndex)
+
